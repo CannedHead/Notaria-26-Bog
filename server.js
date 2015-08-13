@@ -6,14 +6,9 @@ var express = require('express'),
     session      = require('express-session'),
     bodyParser = require('body-parser'),
     morgan         = require('morgan'),
-    methodOverride = require('method-override'),
-    mysql = require('mysql');
+    methodOverride = require('method-override');
 
-
-var mongoose = require('mongoose');
-var passport = require('passport');
 var app = express();
-var mongoStore = require('connect-mongo')(session);
 
 var http = require('http')
     server = http.createServer(app);
@@ -21,7 +16,6 @@ var http = require('http')
 
 //Load config files
 var config = require(__dirname + '/config/config.json');
-require('./config/passport')(passport); 
 
 // -----------------------------------------------------------------
 // Configure Expresss
@@ -34,7 +28,6 @@ app.use(session({
     cookie: { maxAge: new Date(Date.now() + 181440000)},cookie: { maxAge: 2628000000 },
 	// Set up MongoDB session storage
     //store: new mongoStore({url:config.db.test}),
-    store: new mongoStore({url:config.db.development}),
 
 	
 })); //si
@@ -46,9 +39,6 @@ app.use(bodyParser());
 app.use(methodOverride()); 
 app.use(express.static(__dirname + '/public'));
 
-// Set up passport
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.locals.moment = require('moment');
 
@@ -57,7 +47,7 @@ app.locals.moment = require('moment');
 // -----------------------------------------------------------------
 
 var router = express.Router(); 
-require('./config/routes')(router, passport);
+require('./config/routes')(router);
 app.use(router);
 
 // -----------------------------------------------------------------
@@ -68,15 +58,4 @@ server.listen(app.get('port'), function(){
   console.log("Listening on port " + app.get('port'));
 });
 
-// -----------------------------------------------------------------
-// Database
-// -----------------------------------------------------------------
-
-mongoose.connect(config.db.development , function(err, res) {   
-	if(err) {
-		console.log('ERROR: connecting to MongoDB Database. ' + err);
-	} else {
-		console.log('Connected to MongoDB Database');
-	}
-});
 
