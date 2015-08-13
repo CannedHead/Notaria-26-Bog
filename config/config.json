@@ -1,27 +1,3 @@
 {
-    "sql": {
-        "host":"us-cdbr-iron-east-02.cleardb.net",
-        "user": "b933a2bfb97ec4",
-        "password": "a7a8f938",
-        "database": "heroku_e892563a8f82560"
-    },
-    
-    "cookie_secret" : "session secret",
-    
-    "db": {
-    	"test" : "mongodb://localhost/seguimientorenoboy",
-    	"development" : "mongodb://heroku_r8vm4g27:bld94p2umu9r87ar57suq7i5d5@ds047612.mongolab.com:47612/heroku_r8vm4g27"
-    },
-    "twilio" : {
-        "accountSid" : "AC120e87fcbacb5ccbc5562f9951192ffe",
-        "authToken" : "b1d3296dee50d2677a1ac1965a955238"
-    },
-    "twilio_test" : {
-        "accountSid" : "AC4ead2a051b89229e1f0b0b5dbffd8c02",
-        "authToken" : "cb5e951f4cbf9f80149967b44fe33cb3"
-    },
-    "mailer":{
-        "user" : "app27964745@heroku.com",
-        "pass" : "Vm6fPM5fVItowruloni21Q"
-    }  
+
 }
