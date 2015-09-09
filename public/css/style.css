@@ -649,3 +649,7 @@ h3 {padding: 0; margin: 0;}
 	border: 0.1em solid #EF7E2D;
 	padding:0 0.2em;
 }
+
+.event-name{
+	color:#EF7E2D;
+}
