@@ -24,7 +24,7 @@
     "underscore" : "1.6.x",
     "request" : "2.36.x",
     "querystring" : "0.2.x",
-   "aws-sdk-apis": "3.0.x",    
+    "aws-sdk-apis": "3.0.x",    
     "xml2js": "0.4.x",
     "xmlbuilder": "2.2.x",
     "nodemailer":"0.7.x",
