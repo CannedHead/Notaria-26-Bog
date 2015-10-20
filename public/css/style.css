@@ -133,7 +133,7 @@ font-weight: 900;
 }
 
 #tf-home .overlay{
-	background-color: rgba(239, 126, 45, 0.85);
+	background-color: rgba(0, 0, 0, 0.85);
 	
 	/*background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
 	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
@@ -157,8 +157,7 @@ font-weight: 900;
 }
 
 .color{
-	/*color: #EF7E2D;*/
-	color: #4A4A4B;
+	color: #EF7E2D;
 }
 
 a.fa.fa-angle-down {
@@ -659,8 +658,7 @@ h3 {padding: 0; margin: 0;}
 }
 
 .logo-square{
-	/*border: 0.1em solid #EF7E2D;*/
-	border: 0.15em solid #4A4A4B;
+	border: 0.1em solid #EF7E2D;
 	padding:0 0.2em;
 }
 
