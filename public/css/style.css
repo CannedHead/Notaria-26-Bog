@@ -130,7 +130,7 @@ font-weight: 900;
 #tf-home p.lead{
 	font-weight:400; 
 	color:#4A4A4A;
-	font-size: 25px;
+	font-size: 22px;
 }
 
 #tf-home .overlay{
@@ -160,16 +160,17 @@ font-weight: 900;
 
 a.fa.fa-angle-down {
 	padding: 10px 15px;
-	color: #4A4A4A;
-	border: 2px solid #4A4A4A;
 	border-radius: 50%;
+	color: #ffffff;
+	border: 2px solid #4A4A4A;	
 	font-size: 24px;
 	margin-top: 100px !important;
 	transition: all 0.5s;
+	background: #EF7E2D;
 }
 a.fa.fa-angle-down:hover{
-	background: #EF7E2D;
-	color: #ffffff;
+	background: #fff;
+	color: #4A4A4A;
 	border: 2px solid #EF7E2D;
 }
 /* About Section */
