@@ -21,8 +21,6 @@ var defaultTransport = nodemailer.createTransport("SMTP", {
 
 exports.contactMail = function(req, res){
   
-    var name = req.body.name;
-    var phone = req.body.phone;
     var email = req.body.email;
     var message = req.body.message;
    
@@ -44,18 +42,17 @@ exports.contactMail = function(req, res){
     var mailOptions = {
 
         // sender info
-        from: 'Contáctenos'+' <noreply@notaria20demedellin.com>',
+        from: 'Contáctenos'+' <noreply@notaria26bogota.com>',
         // Comma separated list of recipients
-        to: 'info@notaria20demedellin.com',
+        //to: 'antwort7@gmail.com',
+        to: 'notaria@notaria26bogota.com',
         // Subject of the message
-        subject: 'Consulta: ' + name, //
+        subject: 'Consulta: Página Web Notaría 26 de Bogotá', //
         headers: {
             'X-Laziness-level': 1000
         },
         // HTML body
-        html:'Información de la radicado: <br/>'+
-           'Nombre Usuario: ' + name + '.<br/>'+
-           'Teléfono: ' + phone + '.<br/>'+
+        html:'Información de la Consulta: <br/>'+
            'Email: ' + email + '.<br/><br/>'+
            'Mensaje: <br/>'+ message
     };

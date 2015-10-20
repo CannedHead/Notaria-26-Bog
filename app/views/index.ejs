@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
 
+
     <!-- Slider
     ================================================== -->
     <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
@@ -752,15 +753,22 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="email" id='email' class="form-control" id="exampleInputEmail1" placeholder="Correo electrónico">
+                                    <h4 class='modal-title text-success success-modal text-center hidden' id='contactSuccess'></h4>
+                                    <h4 class='modal-title text-danger danger-modal text-center hidden' id='contactError'></h4>
+                                    <input type="email" id='email' name='email' class="form-control" id="exampleInputEmail1" placeholder="Correo electrónico">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id='message' rows="3" placeholder='Escriba aqui sus inquetudes, dudas o sugerencias'></textarea>
+                            <textarea class="form-control" id='message' name='message' rows="3" placeholder='Escriba aqui sus inquetudes, dudas o sugerencias'></textarea>
                         </div>
                         
-                        <button type="submit" class="btn tf-btn btn-default">Enviar</button>
+                        <button type="submit" id='contactBtn' class="btn tf-btn btn-default">Enviar</button>
+                        <div class='spinner' id='contactSpinner'>
+                            <div class='bounce1'></div>
+                            <div class='bounce2'></div>
+                            <div class='bounce3'></div>                                    
+                        </div>
                     </form>
 
                 </div>

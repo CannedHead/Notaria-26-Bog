@@ -1,5 +1,6 @@
 $(function() {
 
+    $('#contactSpinner').hide();
     $("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
@@ -8,47 +9,46 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
             var message = $("textarea#message").val();
-            var firstName = name; // For Success/Failure Message
-            // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
-            }
+
+            $("#contactBtn").hide().fadeOut( "slow", function() {
+                $('#contactSpinner').show();
+            }); 
+
             $.ajax({
                 url: "/api/mailer",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
                     email: email,
                     message: message
                 },
                 cache: false,
                 success: function() {
-                    // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-success')
-                        .append("<strong> Exito! </strong> Su mensaje se ha enviado.");
-                    $('#success > .alert-success')
-                        .append('</div>');
-
+                    $( "#contactSpinner" ).fadeOut( "slow", function() {
+                        $('#contactBtn').show().fadeIn( "slow");  
+                        $('#contactSuccess').html('<span class="fa fa-check-circle"></span> Tu mensaje ha sido enviado exitosamente');
+                        $('#contactSuccess').removeClass('hidden').fadeIn( "slow"); 
+                    });                                                   
                     //clear all fields
                     $('#contactForm').trigger("reset");
+
+                    setTimeout(function(){
+                        $('#contactSuccess').addClass('hidden').fadeOut( "slow"); 
+                    }, 3500); 
                 },
                 error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong> Lo sentimos " + firstName + ", parece que el servidor de correos no responde. Por favor intentelo más tarde!");
-                    $('#success > .alert-danger').append('</div>');
+                    $( "#contactSpinner" ).fadeOut( "slow", function() {
+                        $('#contactBtn').show().fadeIn( "slow");  
+                        $('#contactError').html('<span class="fa fa-exclamation-triangle"></span> Ha sucedido un Error, Vuelve a intentarlo');
+                        $('#contactError').removeClass('hidden').fadeIn( "slow"); 
+                    });                                                   
                     //clear all fields
                     $('#contactForm').trigger("reset");
+
+                     setTimeout(function(){
+                        $('#contactError').addClass('hidden').fadeOut( "slow"); 
+                    }, 3500);                           
                 },
             })
         },
