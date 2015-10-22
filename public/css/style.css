@@ -87,6 +87,8 @@ color: #fff;
 font-weight: 900;
 }
 
+
+
 #tf-menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
 	color: #FFF;
@@ -125,6 +127,12 @@ font-weight: 900;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color: #cfcfcf;
+}
+
+#tf-home h1{
+	color:#4A4A4A; 
+	margin-top:-25px;
+	line-height:1.7em;
 }
 
 #tf-home p.lead{
@@ -725,4 +733,35 @@ h3 {padding: 0; margin: 0;}
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+	#tf-menu a.navbar-brand {
+		font-size: 18px;
+	}
+
+	#tf-home h1{
+		font-size: 30px !important;
+	}
+
+	#tf-home p.lead{
+		font-size: 16px;
+	}
+
+    ul.main {
+        list-style: outside none none;
+        max-width: 100%;
+        margin: 0;
+        padding: 0px;
+    }
+    
+    .events{
+        margin-left: 3%;
+    }
+
+    .event-location {
+        margin-left: 0;
+    }
+
 }
