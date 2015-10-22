@@ -764,4 +764,8 @@ h3 {padding: 0; margin: 0;}
         margin-left: 0;
     }
 
+    .tf-btn{
+    	width: 100%;
+    }
+
 }
