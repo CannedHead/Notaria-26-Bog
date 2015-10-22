@@ -175,10 +175,22 @@ a.fa.fa-angle-down:hover{
 }
 /* About Section */
 #tf-about{
-	padding: 80px 0;
-	background-color:#EF7E2D; 
+	padding: 0;
+	background: url(https://s3.amazonaws.com/cannedhead.notaria26bogota/1sf.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 	color: #fff;
 }
+
+#tf-about .overlay{
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 100vh;
+	background-attachment: fixed;
+
+}
+
 ul.about-list{ margin: 30px 0 0 ;}
 ul.about-list li{
 	display: block;
