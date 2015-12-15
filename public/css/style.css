@@ -135,6 +135,12 @@ font-weight: 900;
 	line-height:1.7em;
 }
 
+@media(min-width: 1500px){
+	#tf-home h1{
+		margin-top:-67px;
+	}	
+}
+
 #tf-home p.lead{
 	font-weight:400; 
 	color:#4A4A4A;
@@ -679,8 +685,11 @@ h3 {padding: 0; margin: 0;}
 }
 
 .logo-square{
-	border: 0.1em solid #EF7E2D;
-	padding:0 0.2em;
+	/*border: 0.1em solid #EF7E2D;*/
+	padding:0.4em 0.4em;
+	background: url(https://s3.amazonaws.com/cannedhead.notaria26bogota/navidad/esfera+naranja.svg) no-repeat;
+	background-size: 100% 100%;
+	color: #FFF;
 }
 
 .event-name{
