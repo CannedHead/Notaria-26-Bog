@@ -1,13 +1,7 @@
 @media (max-width: 768px){
   .content {
-	padding: 15% 0 0;
+	padding: 40% 0 0;
 	}
-}
-
-@media (max-width: 360px){
-  .content {
-    padding: 5% 0 0;
-    }
 }
 
 @media (max-width: 603px){
