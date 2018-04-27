@@ -1,5 +1,4 @@
 'use strict';
-var moment = require('moment-timezone');
 var config = require('../config/config');
 var nodemailer = require('nodemailer');
 var path = require('path');
