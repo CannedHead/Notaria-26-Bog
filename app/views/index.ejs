@@ -850,6 +850,20 @@
                         </div>
                     </form>
 
+                    <div class="section-title center">
+                        <br>
+                        <br>
+                        <h2 class='visible-xs'><strong>Ubicación</strong></h2>
+                        <h2 class='hidden-xs'>Donde estamos <strong>ubicados</strong></h2>
+                        <div class="line">
+                            <hr>
+                        </div>
+                        <div class="clearfix"></div>
+                        <medium><em> Lo esperamos en la Notaría 26 de Bogotá D.C.</em></medium>            
+                    </div>
+
+                    <div id="map" style='height:300px;'></div>
+
                 </div>
             </div>
 
@@ -891,15 +905,39 @@
     ================================================== -->
     <script type="text/javascript" src="js/main.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-69356302-1', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-69356302-1', 'auto');
+        ga('send', 'pageview');
+
+        // maps
+        const param_lat = 4.6755329;
+        const param_lng = -74.0489092;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: param_lat, lng: param_lng},
+                zoom: 17
+            });    
+            map.markers = [];  
+
+            var icon = {
+                url: "http://www.100in1day.org/img/likes.svg", // url
+                scaledSize: new google.maps.Size(50, 50), // scaled size
+            };            
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(param_lat, param_lng),
+                icon: icon
+            }); 
+            map.markers.push(marker);
+        };
 
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb9WUiBGPBKqDoERPDoYlqYHvD6Xpo5Ek&libraries=places&callback=initMap" async defer></script>
 
   </body>
 </html>
